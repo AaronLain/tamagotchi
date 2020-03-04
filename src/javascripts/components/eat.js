@@ -1,11 +1,15 @@
 import util from '../helpers/utils';
+import data from '../helpers/data/valueData';
 
-const addToEat = () => {
-  const full = 100;
+const printToEat = () => {
+  const valueArray = data.getData();
+  const full = valueArray[0].value;
   let domString = '';
   domString += '<h2>EAT</div>';
   domString += `<p><em>${full}</em></p>`;
+  domString += '<button id="eat" class="kinda-healthy"></button>'; // hot dog
+  // domString += '<button id="super-healthy apple"></button>';
   util.printToDom('eat', domString);
 };
 
-export default { addToEat };
+export default { printToEat };
