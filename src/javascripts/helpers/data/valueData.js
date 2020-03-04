@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const tamagotchiArray = [
   {
     id: 'eat',
@@ -22,22 +23,21 @@ const tamagotchiArray = [
 // };
 
 const subtractionEvent = (objectId) => {
-  const targetId = tamagotchiArray.findIndex((x) => x.id === objectId);
-  let targetValue = tamagotchiArray[targetId].value;
-  switch (objectId) {
-    case 'eat':
-      targetValue -= 3;
-      tamagotchiArray[targetId] = targetValue;
-      break;
-    case 'fight':
-      targetValue -= 10;
-      tamagotchiArray[targetId] = targetValue;
-      break;
-    default:
-      console.error('something went wrong lol ');
-  }
-  return targetValue;
+  tamagotchiArray.forEach((thing) => {
+    if (thing.id === objectId) {
+      if (objectId === 'eat') {
+        // eslint-disable-next-line no-param-reassign
+        thing.value -= 3;
+      } else if (objectId === 'fight') {
+        thing.value -= 10;
+      }
+    } else {
+      return objectId;
+    }
+    return objectId;
+  });
 };
+
 
 const getData = () => tamagotchiArray;
 
