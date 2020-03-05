@@ -1,10 +1,10 @@
 import data from './data/valueData';
 import eat from '../components/eat';
+import play from '../components/play';
 
 
 const mathEvents = (e) => {
   const buttonId = e.target.id;
-  console.error(buttonId);
   switch (buttonId) {
     case 'kinda-healthy':
       data.subtractFromEat();
@@ -12,10 +12,17 @@ const mathEvents = (e) => {
     case 'super-healthy':
       data.addToEat();
       break;
+    case 'kinda-fun':
+      data.addTwotoPlay();
+      break;
+    case 'super-fun':
+      data.addFiftytoPlay();
+      break;
     default:
       console.error('whoops lol?');
   }
   eat.printToEat();
+  play.printToPlay();
 };
 
 // const subtractEvent = (e) => {

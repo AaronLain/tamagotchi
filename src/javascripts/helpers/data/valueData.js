@@ -42,23 +42,6 @@ const addToEat = () => {
   return newValue;
 };
 
-// const subtractionEvent = (objectId) => {
-//   tamagotchiArray.forEach((thing) => {
-//     if (thing.id === objectId) {
-//       if (objectId === 'eat') {
-//         // eslint-disable-next-line no-param-reassign
-//         thing.value -= 3;
-//       } else if (objectId === 'fight') {
-//         thing.value -= 10;
-//       }
-//     } else {
-//       return objectId;
-//     }
-//     return objectId;
-//   });
-// };
-
-
 const getData = () => tamagotchiArray;
 
 export default { getData, subtractFromEat, addToEat };
