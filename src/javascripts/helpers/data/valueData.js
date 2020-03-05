@@ -1,3 +1,5 @@
+// import eat from "../../components/eat";
+
 /* eslint-disable no-param-reassign */
 const tamagotchiArray = [
   {
@@ -18,27 +20,45 @@ const tamagotchiArray = [
   },
 ];
 
-// const addEvent = (num) => {
-//
-// };
-
-const subtractionEvent = (objectId) => {
-  tamagotchiArray.forEach((thing) => {
-    if (thing.id === objectId) {
-      if (objectId === 'eat') {
-        // eslint-disable-next-line no-param-reassign
-        thing.value -= 3;
-      } else if (objectId === 'fight') {
-        thing.value -= 10;
-      }
-    } else {
-      return objectId;
-    }
-    return objectId;
-  });
+const subtractFromEat = () => {
+  const eatValue = tamagotchiArray[0].value;
+  const newValue = eatValue - 3;
+  if (eatValue > 0) {
+    tamagotchiArray[0].value = newValue;
+  } else {
+    return eatValue;
+  }
+  return newValue;
 };
+
+const addToEat = () => {
+  const eatValue = tamagotchiArray[0].value;
+  const newValue = eatValue + 10;
+  if (eatValue < 90) {
+    tamagotchiArray[0].value = newValue;
+  } else if (eatValue > 90 && eatValue <= 100) {
+    tamagotchiArray[0].value = 100;
+  }
+  return newValue;
+};
+
+// const subtractionEvent = (objectId) => {
+//   tamagotchiArray.forEach((thing) => {
+//     if (thing.id === objectId) {
+//       if (objectId === 'eat') {
+//         // eslint-disable-next-line no-param-reassign
+//         thing.value -= 3;
+//       } else if (objectId === 'fight') {
+//         thing.value -= 10;
+//       }
+//     } else {
+//       return objectId;
+//     }
+//     return objectId;
+//   });
+// };
 
 
 const getData = () => tamagotchiArray;
 
-export default { getData, subtractionEvent };
+export default { getData, subtractFromEat, addToEat };

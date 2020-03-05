@@ -7,8 +7,8 @@ const printToEat = () => {
   let domString = '';
   domString += '<h2>EAT</div>';
   domString += `<p><em>${full}</em></p>`;
-  domString += '<button id="eat" class="kinda-healthy"></button>'; // hot dog
-  // domString += '<button id="super-healthy apple"></button>';
+  domString += '<button id="kinda-healthy"></button>'; // hot dog
+  domString += '<button id="super-healthy"></button>'; // apple
   util.printToDom('eat', domString);
 };
 
