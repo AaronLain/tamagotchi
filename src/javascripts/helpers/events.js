@@ -1,6 +1,7 @@
 import data from './data/valueData';
 import eat from '../components/eat';
 import play from '../components/play';
+import fight from '../components/fight';
 
 
 const mathEvents = (e) => {
@@ -18,11 +19,18 @@ const mathEvents = (e) => {
     case 'super-fun':
       data.addFiftyToPlay();
       break;
+    case 'fight':
+      data.subtractFromEnergy();
+      break;
+    case 'run':
+      data.addToEnergy();
+      break;
     default:
       console.error('whoops lol?');
   }
   eat.printToEat();
   play.printToPlay();
+  fight.printToFight();
 };
 
 // const subtractEvent = (e) => {

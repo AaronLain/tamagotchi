@@ -43,11 +43,11 @@ const addToEat = () => {
 };
 
 const addTwoToPlay = () => {
-  const eatValue = tamagotchiArray[1].value;
-  const newValue = eatValue + 2;
-  if (eatValue < 98) {
+  const playValue = tamagotchiArray[1].value;
+  const newValue = playValue + 2;
+  if (playValue < 98) {
     tamagotchiArray[1].value = newValue;
-  } else if (eatValue > 97 && eatValue <= 100) {
+  } else if (playValue > 97 && playValue <= 100) {
     tamagotchiArray[1].value = 100;
   }
   return newValue;
@@ -56,7 +56,7 @@ const addTwoToPlay = () => {
 const addFiftyToPlay = () => {
   const eatValue = tamagotchiArray[1].value;
   const newValue = eatValue + 50;
-  if (eatValue < 50) {
+  if (eatValue < 100) {
     tamagotchiArray[1].value = newValue;
   } else if (eatValue > 50 && eatValue <= 100) {
     tamagotchiArray[1].value = 100;
@@ -64,8 +64,28 @@ const addFiftyToPlay = () => {
   return newValue;
 };
 
+const subtractFromEnergy = () => {
+  const energyValue = tamagotchiArray[2].value;
+  const newValue = energyValue - 10;
+  if (energyValue > 0) {
+    tamagotchiArray[2].value = newValue;
+  } else if (energyValue < 0) {
+    tamagotchiArray[2].value = 0;
+  }
+  return newValue;
+};
+
+const addToEnergy = () => {
+  const energyValue = tamagotchiArray[2].value;
+  const newValue = energyValue + 1;
+  if (energyValue < 100) {
+    tamagotchiArray[2].value = newValue;
+  }
+  return newValue;
+};
+
 const getData = () => tamagotchiArray;
 
 export default {
-  getData, subtractFromEat, addToEat, addTwoToPlay, addFiftyToPlay,
+  getData, subtractFromEat, addToEat, addTwoToPlay, addFiftyToPlay, subtractFromEnergy, addToEnergy,
 };
