@@ -2,7 +2,14 @@ import data from './data/valueData';
 import eat from '../components/eat';
 import play from '../components/play';
 import fight from '../components/fight';
+import sleep from '../components/sleep';
 
+const printEvents = () => {
+  eat.printToEat();
+  play.printToPlay();
+  fight.printToFight();
+  sleep.printToSleep();
+};
 
 const mathEvents = (e) => {
   const buttonId = e.target.id;
@@ -20,28 +27,25 @@ const mathEvents = (e) => {
       data.addFiftyToPlay();
       break;
     case 'fight':
-      data.subtractFromEnergy();
+      data.subtractFromStrength();
       break;
     case 'run':
-      data.addToEnergy();
+      data.addToStrength();
+      break;
+    case 'nap':
+      data.addFiftyToEnergy();
+      break;
+    case 'deep-sleep':
+      data.addSixtyToEnergy();
       break;
     default:
       console.error('whoops lol?');
   }
-  eat.printToEat();
-  play.printToPlay();
-  fight.printToFight();
+  printEvents();
 };
-
-// const subtractEvent = (e) => {
-//  const targetId = e.target.id;
-//  data.subtractionEvent(targetId);
-//  eat.printToEat();
-//  console.error(targetId);
-// };
 
 const clickEvents = () => {
   $('body').on('click', '#app', mathEvents);
 };
 
-export default { clickEvents };
+export default { clickEvents, printEvents };
