@@ -42,6 +42,30 @@ const addToEat = () => {
   return newValue;
 };
 
+const addTwoToPlay = () => {
+  const eatValue = tamagotchiArray[1].value;
+  const newValue = eatValue + 2;
+  if (eatValue < 98) {
+    tamagotchiArray[1].value = newValue;
+  } else if (eatValue > 97 && eatValue <= 100) {
+    tamagotchiArray[1].value = 100;
+  }
+  return newValue;
+};
+
+const addFiftyToPlay = () => {
+  const eatValue = tamagotchiArray[1].value;
+  const newValue = eatValue + 50;
+  if (eatValue < 50) {
+    tamagotchiArray[1].value = newValue;
+  } else if (eatValue > 50 && eatValue <= 100) {
+    tamagotchiArray[1].value = 100;
+  }
+  return newValue;
+};
+
 const getData = () => tamagotchiArray;
 
-export default { getData, subtractFromEat, addToEat };
+export default {
+  getData, subtractFromEat, addToEat, addTwoToPlay, addFiftyToPlay,
+};

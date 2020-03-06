@@ -13,10 +13,10 @@ const mathEvents = (e) => {
       data.addToEat();
       break;
     case 'kinda-fun':
-      data.addTwotoPlay();
+      data.addTwoToPlay();
       break;
     case 'super-fun':
-      data.addFiftytoPlay();
+      data.addFiftyToPlay();
       break;
     default:
       console.error('whoops lol?');
