@@ -1,5 +1,6 @@
 import util from '../../helpers/utils';
 import data from '../../helpers/data/valueData';
+import './eat.scss';
 
 const printToEat = () => {
   const valueArray = data.getData();

@@ -1,0 +1,12 @@
+@import '../../../styles/colors';
+
+#eat.quad {
+  width: 48%;
+  display: flex;
+  flex: row wrap;
+}
+
+.eat {
+  background-color: $pink;
+  width: 48%
+}
