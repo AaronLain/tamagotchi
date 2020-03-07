@@ -39,7 +39,7 @@ const mathEvents = (e) => {
       data.addSixtyToEnergy();
       break;
     default:
-      console.error('whoops lol?');
+      console.error('');
   }
   printEvents();
 };
