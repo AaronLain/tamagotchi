@@ -1,10 +1,55 @@
-@import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "./colors";
 
-body {
-  background-color: hotpink;
+div#app {
+  display: flex;
+  flex-direction: row wrap;
+  
+  div#column-1 {
+    width: 50%;
+    height: 100%;
+  }
+  div#column-2 {
+    width: 50%;
+    height: 100%;
+  }
 }
 
-h1 {
+@mixin app-styles($divcolor, $buttoncolor){
+  background-color: $divcolor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  margin: auto;
+  button {
+    width: 15rem;
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 3rem;
+  }
+  i {
+    font-size: 200%;
+    color: $buttoncolor;
+  }
 }
+
+.eat-container {
+  @include app-styles($pink, $yellow);
+}
+
+.play-container {
+  @include app-styles($orange, $limegreen);
+}
+
+.fight-container {
+  @include app-styles($limegreen, $orange);
+}
+
+.sleep-container {
+  @include app-styles($yellow, $pink);
+}
+
+
