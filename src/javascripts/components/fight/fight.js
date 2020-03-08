@@ -7,8 +7,8 @@ const printToFight = () => {
   const strength = valueArray[2].value;
   let domString = '';
   domString += '<div class="fight-container">';
-  domString += '<h2>FIGHT</h2>';
-  domString += `<h3><em>${strength}</em></h3>`;
+  domString += '<h1>FIGHT</h1>';
+  domString += `<h2><em>${strength}</em></h2>`;
   domString += '<button id="fight"><i class="fas fa-fighter-jet"></i></button>'; // hot dog
   domString += '<button id="run"><i class="fas fa-running"></i></button>';
   domString += '</div>';

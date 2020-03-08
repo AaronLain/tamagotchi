@@ -7,8 +7,8 @@ const printToEat = () => {
   const full = valueArray[0].value;
   let domString = '';
   domString += '<div class="eat-container">';
-  domString += '<h2>EAT</h2>';
-  domString += `<h3><em>${full}</em></h3>`;
+  domString += '<h1>EAT</h1>';
+  domString += `<h2><em>${full}</em></h2>`;
   domString += '<button id="kinda-healthy"><i class="fas fa-hotdog"></i></button>'; // hot dog
   domString += '<button id="super-healthy"><i class="fas fa-apple-alt"></i></button>'; // apple
   domString += '</div>';
