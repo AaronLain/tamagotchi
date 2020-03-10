@@ -1,5 +1,3 @@
-// import eat from "../../components/eat";
-
 /* eslint-disable no-param-reassign */
 const tamagotchiArray = [
   {
@@ -22,7 +20,8 @@ const tamagotchiArray = [
 
 const subtractFromEat = () => {
   const eatValue = tamagotchiArray[0].value;
-  const newValue = eatValue - 3;
+  const randValue = Math.ceil(Math.random() * 10);
+  const newValue = eatValue - randValue;
   if (eatValue > 0) {
     tamagotchiArray[0].value = newValue;
   } else {
@@ -33,7 +32,8 @@ const subtractFromEat = () => {
 
 const addToEat = () => {
   const eatValue = tamagotchiArray[0].value;
-  const newValue = eatValue + 10;
+  const randValue = Math.ceil(Math.random() * 10);
+  const newValue = eatValue + randValue;
   if (eatValue < 90) {
     tamagotchiArray[0].value = newValue;
   } else if (eatValue > 90 && eatValue <= 100) {
@@ -42,23 +42,13 @@ const addToEat = () => {
   return newValue;
 };
 
-const addTwoToPlay = () => {
+const addToPlay = () => {
   const playValue = tamagotchiArray[1].value;
-  const newValue = playValue + 2;
-  if (playValue < 98) {
+  const randValue = Math.ceil(Math.random() * 12);
+  const newValue = playValue + randValue;
+  if (playValue < 88) {
     tamagotchiArray[1].value = newValue;
-  } else if (playValue > 97 && playValue <= 100) {
-    tamagotchiArray[1].value = 100;
-  }
-  return newValue;
-};
-
-const addFiftyToPlay = () => {
-  const eatValue = tamagotchiArray[1].value;
-  const newValue = eatValue + 50;
-  if (eatValue <= 50) {
-    tamagotchiArray[1].value = newValue;
-  } else if (eatValue > 50 && eatValue <= 100) {
+  } else if (playValue > 87 && playValue <= 100) {
     tamagotchiArray[1].value = 100;
   }
   return newValue;
@@ -66,7 +56,8 @@ const addFiftyToPlay = () => {
 
 const subtractFromStrength = () => {
   const energyValue = tamagotchiArray[2].value;
-  const newValue = energyValue - 10;
+  const randValue = Math.ceil(Math.random() * 11);
+  const newValue = energyValue - randValue;
   if (energyValue > 0) {
     tamagotchiArray[2].value = newValue;
   } else if (energyValue < 0) {
@@ -77,30 +68,23 @@ const subtractFromStrength = () => {
 
 const addToStrength = () => {
   const energyValue = tamagotchiArray[2].value;
-  const newValue = energyValue + 1;
-  if (energyValue < 100) {
+  const randValue = Math.ceil(Math.random() * 3);
+  const newValue = energyValue + randValue;
+  if (energyValue < 97) {
     tamagotchiArray[2].value = newValue;
+  } else if (energyValue > 98 && energyValue < 100) {
+    tamagotchiArray[2].value = 100;
   }
   return newValue;
 };
 
-const addFiftyToEnergy = () => {
+const addToEnergy = () => {
   const playValue = tamagotchiArray[3].value;
-  const newValue = playValue + 50;
-  if (playValue < 50) {
+  const randValue = Math.ceil(Math.random() * 25);
+  const newValue = playValue + randValue;
+  if (playValue < 75) {
     tamagotchiArray[3].value = newValue;
-  } else if (playValue >= 50 && playValue <= 100) {
-    tamagotchiArray[3].value = 100;
-  }
-  return newValue;
-};
-
-const addSixtyToEnergy = () => {
-  const eatValue = tamagotchiArray[3].value;
-  const newValue = eatValue + 60;
-  if (eatValue < 40) {
-    tamagotchiArray[3].value = newValue;
-  } else if (eatValue >= 40 && eatValue <= 100) {
+  } else if (playValue >= 75 && playValue <= 100) {
     tamagotchiArray[3].value = 100;
   }
   return newValue;
@@ -109,5 +93,5 @@ const addSixtyToEnergy = () => {
 const getData = () => tamagotchiArray;
 
 export default {
-  getData, subtractFromEat, addToEat, addTwoToPlay, addFiftyToPlay, subtractFromStrength, addToStrength, addFiftyToEnergy, addSixtyToEnergy,
+  getData, subtractFromEat, addToEat, addToPlay, subtractFromStrength, addToStrength, addToEnergy,
 };
