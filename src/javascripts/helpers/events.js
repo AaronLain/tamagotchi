@@ -42,8 +42,6 @@ const mathEvents = (e) => {
       printEvents();
       break;
     default:
-      printEvents();
-      console.error(e.target.id);
   }
   printEvents();
 };
