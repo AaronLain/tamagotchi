@@ -48,7 +48,7 @@ const addToPlay = () => {
   const newValue = playValue + randValue;
   if (playValue < 88) {
     tamagotchiArray[1].value = newValue;
-  } else if (playValue > 87 && playValue <= 100) {
+  } else if (playValue > 85 && playValue <= 100) {
     tamagotchiArray[1].value = 100;
   }
   return newValue;
@@ -70,9 +70,9 @@ const addToStrength = () => {
   const energyValue = tamagotchiArray[2].value;
   const randValue = Math.ceil(Math.random() * 3);
   const newValue = energyValue + randValue;
-  if (energyValue < 97) {
+  if (energyValue < 94) {
     tamagotchiArray[2].value = newValue;
-  } else if (energyValue > 98 && energyValue < 100) {
+  } else if (energyValue >= 95 && energyValue < 100) {
     tamagotchiArray[2].value = 100;
   }
   return newValue;
@@ -84,7 +84,7 @@ const addToEnergy = () => {
   const newValue = playValue + randValue;
   if (playValue < 75) {
     tamagotchiArray[3].value = newValue;
-  } else if (playValue >= 75 && playValue <= 100) {
+  } else if (playValue >= 73 && playValue <= 100) {
     tamagotchiArray[3].value = 100;
   }
   return newValue;
