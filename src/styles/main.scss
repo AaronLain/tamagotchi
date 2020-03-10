@@ -19,6 +19,8 @@ div#app {
   }
 }
 
+
+
 @mixin app-styles($divcolor, $buttoncolor){
   background-color: $divcolor;
   display: flex;
