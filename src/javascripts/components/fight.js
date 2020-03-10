@@ -1,6 +1,6 @@
-import util from '../../helpers/utils';
-import data from '../../helpers/data/valueData';
-import '../../../styles/main.scss';
+import util from '../helpers/utils';
+import data from '../helpers/data/valueData';
+import '../../styles/main.scss';
 
 const printToFight = () => {
   const valueArray = data.getData();

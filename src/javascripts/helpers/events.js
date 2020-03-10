@@ -13,33 +13,37 @@ const printEvents = () => {
 
 const mathEvents = (e) => {
   const buttonId = e.target.id;
+  console.error(e.target.id);
   switch (buttonId) {
     case 'kinda-healthy':
       data.subtractFromEat();
+      printEvents();
       break;
     case 'super-healthy':
       data.addToEat();
+      printEvents();
       break;
     case 'kinda-fun':
-      data.addTwoToPlay();
-      break;
     case 'super-fun':
-      data.addFiftyToPlay();
+      data.addToPlay();
+      printEvents();
       break;
     case 'fight':
       data.subtractFromStrength();
+      printEvents();
       break;
     case 'run':
       data.addToStrength();
+      printEvents();
       break;
     case 'nap':
-      data.addFiftyToEnergy();
-      break;
     case 'deep-sleep':
-      data.addSixtyToEnergy();
+      data.addToEnergy();
+      printEvents();
       break;
     default:
-      console.error('');
+      printEvents();
+      console.error(e.target.id);
   }
   printEvents();
 };
